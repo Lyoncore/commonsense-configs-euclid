@@ -1,0 +1,1 @@
+sudo gnssStelp NAF LBSSTARTPF 0 15 1000 1000

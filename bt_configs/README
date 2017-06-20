@@ -1,0 +1,14 @@
+bt-enable.sh used to enable bt.
+
+Installation
+------------
+
+First, You need to run install.sh to install files enable bluetooth must .
+
+Then, reboot your device. 
+
+
+cp bt-enable.sh /etc/init.d/
+chmod +x /etc/init.d/bt-enable.sh
+sudo update-rc.d bt-enable.sh defaults
+

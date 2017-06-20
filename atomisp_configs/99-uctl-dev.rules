@@ -1,0 +1,1 @@
+KERNEL=="stm32l051*", SUBSYSTEM=="uctl-dev", MODE="0666"

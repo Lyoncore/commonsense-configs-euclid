@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+
+<!--
+use "man thermal-conf.xml" for details
+-->
+
+<!-- BEGIN -->
+<ThermalConfiguration>
+<Platform>
+	<Name>Intel Cherrytrail</Name>
+	<ProductName>CHERRYVIEWC0PLATFORM</ProductName>
+	<Preference>PERFORMANCE</Preference>
+	<ThermalSensors>
+		<ThermalSensor>
+			<Type>CPU0 temp</Type>
+ 			<Path>/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp2_input</Path>
+			<AsyncCapable>0</AsyncCapable>
+		</ThermalSensor>
+	</ThermalSensors>
+	<ThermalZones>
+		<ThermalZone>
+			<Type>CPU temp</Type>
+			<TripPoints>
+ 				<TripPoint>
+ 					<SensorType>CPU0 temp</SensorType>
+ 					<Temperature>87000</Temperature>
+ 					<type>active</type>
+ 					<ControlType>SEQUENTIAL</ControlType>
+ 					<CoolingDevice>
+ 						<type>cpu_throttling</type>
+ 						<influence>90</influence>
+ 						<TargetState>1</TargetState>
+ 						<SamplingPeriod>3</SamplingPeriod>
+ 					</CoolingDevice>
+ 				</TripPoint>
+				<TripPoint>
+ 					<SensorType>CPU0 temp</SensorType>
+ 					<Temperature>92000</Temperature>
+ 					<type>active</type>
+ 					<ControlType>SEQUENTIAL</ControlType>
+ 					<CoolingDevice>
+ 						<type>cpu_throttling</type>
+ 						<influence>90</influence>
+ 						<TargetState>2</TargetState>
+ 						<SamplingPeriod>3</SamplingPeriod>
+ 					</CoolingDevice>
+ 				</TripPoint>
+ 				<TripPoint>
+					<SensorType>CPU0 temp</SensorType>
+					<Temperature>60000</Temperature>
+					<type>active</type>
+					<ControlType>SEQUENTIAL</ControlType>
+					<CoolingDevice>
+						<type>GPIO_FAN</type>
+						<influence>100</influence>
+						<TargetState>2500</TargetState>
+						<SamplingPeriod>3</SamplingPeriod>
+					</CoolingDevice>
+				</TripPoint>
+				<TripPoint>
+					<SensorType>CPU0 temp</SensorType>
+					<Temperature>64000</Temperature>
+					<type>active</type>
+					<ControlType>SEQUENTIAL</ControlType>
+					<CoolingDevice>
+						<type>GPIO_FAN</type>
+						<influence>100</influence>
+						<TargetState>5000</TargetState>
+						<SamplingPeriod>3</SamplingPeriod>
+					</CoolingDevice>
+				</TripPoint>
+				<TripPoint>
+					<SensorType>CPU0 temp</SensorType>
+					<Temperature>74000</Temperature>
+					<type>active</type>
+					<ControlType>SEQUENTIAL</ControlType>
+					<CoolingDevice>
+						<type>GPIO_FAN</type>
+						<influence>100</influence>
+						<TargetState>10000</TargetState>
+						<SamplingPeriod>3</SamplingPeriod>
+					</CoolingDevice>
+				</TripPoint>		
+			</TripPoints>
+		</ThermalZone>
+	</ThermalZones>
+ 	<CoolingDevices>
+ 		<CoolingDevice>
+ 			<Type>GPIO_FAN</Type>
+ 			<Path>/sys/class/pwm/pwmchip0/pwm0/duty_cycle</Path>
+			<MaxState>10000</MaxState>
+ 			<DebouncePeriod>2</DebouncePeriod>
+ 		</CoolingDevice>
+ 		<CoolingDevice>
+ 			<Type>cpu_throttling</Type>
+ 			<Path>/sys/class/thermal/cooling_device0/cur_state</Path>
+ 			<MinState>0</MinState>
+ 			<IncDecStep>1</IncDecStep>
+ 			<MaxState>10</MaxState>
+ 			<DebouncePeriod>2</DebouncePeriod>
+ 		</CoolingDevice> 		
+ 	</CoolingDevices>
+</Platform>
+</ThermalConfiguration>

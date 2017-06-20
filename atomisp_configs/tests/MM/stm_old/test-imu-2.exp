@@ -1,0 +1,10 @@
+#!/usr/bin/expect
+set timeout 2
+log_file imu-data-2.log
+spawn ./stm32l051_ctrl -d /dev/stm32l051-1 > imu-data-2.log
+send "n\r"
+send "a 16 125 1\r"
+send "g 1000 1\r"
+send "e 0 1 1 1 e 1 1 1 1\r"
+send "r x 3 30\r"
+expect eof

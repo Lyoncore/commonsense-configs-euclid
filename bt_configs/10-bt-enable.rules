@@ -1,0 +1,5 @@
+SUBSYSTEM=="rfkill", ACTION=="change", ATTR{name}=="hci0", ATTR{state}=="1", RUN+="/etc/init.d/bt-enable.sh start"
+SUBSYSTEM=="rfkill", ACTION=="change", ATTR{name}=="hci0", ATTR{state}=="0", RUN+="/etc/init.d/bt-enable.sh stop"
+SUBSYSTEM=="rfkill", ACTION=="change", ATTR{name}=="hci1", ATTR{state}=="0", RUN+="/etc/init.d/bt-enable.sh change"
+
+

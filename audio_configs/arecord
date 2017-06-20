@@ -1,0 +1,4 @@
+arecord -Dhw:0,0 -r8000 -f cd ./test.wav
+arecord -Dhw:0,0 -r8000 -d 10 -f cd ./test.wav
+arecord  -r192000 -f cd|aplay -r 192000
+sudo cat /sys/kernel/debug/regmap/i2c-10EC5670:00/registers > codec_reg_insense3.log
